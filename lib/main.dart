@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_field, unused_element
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +7,8 @@ import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import './header.dart';
 import './navbar.dart';
 import './current_events.dart';
-import '/Pages/schedule.dart';
+import './calendar.dart';
+import './profile.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,10 +25,25 @@ class _MyAppState extends State<MyApp> {
     Text('Page 3'),
   ];
 
+  final _navigatorKey = GlobalKey<NavigatorState>();
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
+
+    switch (_selectedIndex) {
+      case 1:
+        _navigatorKey.currentState?.push(
+          MaterialPageRoute(builder: (_) => Calendar()),
+        );
+        break;
+      case 2:
+        _navigatorKey.currentState?.push(
+          MaterialPageRoute(builder: (_) => Profile()),
+        );
+        break;
+    }
   }
 
   @override
@@ -39,7 +55,7 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Header(
-              name: "Arush",
+              name: "Aarush",
               date: DateTime.now(),
             ),
             const CurrentEvents(),
@@ -47,13 +63,16 @@ class _MyAppState extends State<MyApp> {
         ),
         bottomNavigationBar: SalomonBottomBar(
           currentIndex: _selectedIndex,
-          onTap: (i) => setState(() => _selectedIndex = i),
+          onTap: _onItemTapped,
           items: [
             /// Home
             SalomonBottomBarItem(
-              unselectedColor: Colors.green,
+              unselectedColor: Colors.black,
               icon: Icon(Icons.home),
-              title: Text("Home"),
+              title: Text(
+                "Home",
+                style: TextStyle(fontFamily: 'Raleway'),
+              ),
               selectedColor: Colors.black,
             ),
 
@@ -62,14 +81,14 @@ class _MyAppState extends State<MyApp> {
                 icon: Icon(Icons.calendar_month),
                 title: Text("Calendar"),
                 selectedColor: Colors.black,
-                unselectedColor: Colors.amber),
+                unselectedColor: Colors.black),
 
             /// Profile
             SalomonBottomBarItem(
               icon: Icon(Icons.person),
               title: Text("Profile"),
               selectedColor: Colors.black,
-              unselectedColor: Colors.teal,
+              unselectedColor: Colors.black,
             ),
           ],
         ),

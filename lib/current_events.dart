@@ -40,7 +40,7 @@ class CurrentEvents extends StatelessWidget {
                     const Text(
                       "YOUR NEXT CLASS",
                       style: TextStyle(
-                        fontFamily: 'Arial',
+                        fontFamily: 'Raleway',
                         fontSize: 16.5,
                         fontWeight: FontWeight.bold,
                       ),
@@ -51,7 +51,7 @@ class CurrentEvents extends StatelessWidget {
                       child: const Text(
                         "Expand",
                         style: TextStyle(
-                          fontFamily: 'Arial',
+                          fontFamily: 'Raleway',
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: Colors.purple,
@@ -70,14 +70,16 @@ class CurrentEvents extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                       child: const Center(
-                          child: Text(
-                        "Map",
-                        style: TextStyle(
-                          fontSize: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                        child: Text(
+                          "Map",
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Raleway',
+                          ),
                         ),
-                      )),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 4),
@@ -87,7 +89,10 @@ class CurrentEvents extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             "Start Navigation",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'Raleway',
+                            ),
                           ),
                         ),
                       ),
@@ -103,7 +108,7 @@ class CurrentEvents extends StatelessWidget {
                     const Text(
                       "YOUR ASSIGNMENTS",
                       style: TextStyle(
-                        fontFamily: 'Arial',
+                        fontFamily: 'Raleway',
                         fontSize: 16.5,
                         fontWeight: FontWeight.bold,
                       ),
@@ -114,7 +119,7 @@ class CurrentEvents extends StatelessWidget {
                       child: const Text(
                         "Expand",
                         style: TextStyle(
-                          fontFamily: 'Arial',
+                          fontFamily: 'Raleway',
                           fontSize: 15,
                           color: Colors.purple,
                           fontWeight: FontWeight.bold,
