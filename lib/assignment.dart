@@ -19,8 +19,8 @@ class Assignment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 165,
-      width: 175,
+      height: 150,
+      width: 150,
       padding: EdgeInsets.all(3),
       margin: EdgeInsets.only(left: 4, right: 4),
       decoration: BoxDecoration(
@@ -83,9 +83,11 @@ class Assignment extends StatelessWidget {
               width: 150,
               child: Text(
                 task,
+                maxLines: 2,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ),

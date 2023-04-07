@@ -9,6 +9,9 @@ class CurrentEvents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Expanded(
         child: Container(
       decoration: BoxDecoration(
@@ -46,7 +49,9 @@ class CurrentEvents extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        print(MediaQuery.of(context).size.height);
+                      },
                       style: const ButtonStyle(),
                       child: const Text(
                         "Expand",
@@ -64,7 +69,8 @@ class CurrentEvents extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   children: [
                     Container(
-                      height: 280,
+                      height: 350,
+                      width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         color: Colors.grey[850],
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -155,6 +161,20 @@ class CurrentEvents extends StatelessWidget {
                       task: 'Math',
                     ),
                   ),
+                  Card(
+                    elevation: 0,
+                    child: Assignment(
+                      deadline: 10,
+                      task: 'Math',
+                    ),
+                  ),
+                  Card(
+                    elevation: 0,
+                    child: Assignment(
+                      deadline: 10,
+                      task: 'Math',
+                    ),
+                  )
                 ],
               ),
             )
