@@ -19,6 +19,35 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
 
+  var navItems = [
+    /// Home
+    SalomonBottomBarItem(
+      unselectedColor: Colors.black,
+      icon: Icon(Icons.home),
+      title: Text(
+        "Home",
+        style: TextStyle(fontFamily: 'Raleway'),
+      ),
+      selectedColor: Colors.black,
+    ),
+
+    /// Search
+    SalomonBottomBarItem(
+      icon: Icon(Icons.calendar_month),
+      title: Text("Calendar"),
+      selectedColor: Colors.black,
+      unselectedColor: Colors.black,
+    ),
+
+    /// Profile
+    SalomonBottomBarItem(
+      icon: Icon(Icons.person),
+      title: Text("Profile"),
+      selectedColor: Colors.black,
+      unselectedColor: Colors.black,
+    ),
+  ];
+
   final _navigatorKey = GlobalKey<NavigatorState>();
 
   void _onItemTapped(int index) {
@@ -35,11 +64,13 @@ class _MyAppState extends State<MyApp> {
         _navigatorKey.currentState?.pushReplacement(
           PageRouteBuilder(
             pageBuilder: (_, __, ___) => Scaffold(
-              body: Center(child: CircularProgressIndicator()),
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
             ),
           ),
         );
-        Future.delayed(Duration(milliseconds: 600), () {
+        Future.delayed(Duration(milliseconds: 1000), () {
           _navigatorKey.currentState?.pushReplacement(
             PageRouteBuilder(
               pageBuilder: (_, __, ___) => HomePage(
@@ -48,34 +79,7 @@ class _MyAppState extends State<MyApp> {
                 bottomNavigationBar: SalomonBottomBar(
                   currentIndex: _selectedIndex,
                   onTap: _onItemTapped,
-                  items: [
-                    /// Home
-                    SalomonBottomBarItem(
-                      unselectedColor: Colors.black,
-                      icon: Icon(Icons.home),
-                      title: Text(
-                        "Home",
-                        style: TextStyle(fontFamily: 'Raleway'),
-                      ),
-                      selectedColor: Colors.black,
-                    ),
-
-                    /// Search
-                    SalomonBottomBarItem(
-                      icon: Icon(Icons.calendar_month),
-                      title: Text("Calendar"),
-                      selectedColor: Colors.black,
-                      unselectedColor: Colors.black,
-                    ),
-
-                    /// Profile
-                    SalomonBottomBarItem(
-                      icon: Icon(Icons.person),
-                      title: Text("Profile"),
-                      selectedColor: Colors.black,
-                      unselectedColor: Colors.black,
-                    ),
-                  ],
+                  items: navItems,
                 ),
               ),
             ),
@@ -131,33 +135,7 @@ class _MyAppState extends State<MyApp> {
               bottomNavigationBar: SalomonBottomBar(
                 currentIndex: _selectedIndex,
                 onTap: _onItemTapped,
-                items: [
-                  /// Home
-                  SalomonBottomBarItem(
-                    unselectedColor: Colors.black,
-                    icon: Icon(Icons.home),
-                    title: Text(
-                      "Home",
-                      style: TextStyle(fontFamily: 'Raleway'),
-                    ),
-                    selectedColor: Colors.black,
-                  ),
-
-                  /// Search
-                  SalomonBottomBarItem(
-                      icon: Icon(Icons.calendar_month),
-                      title: Text("Calendar"),
-                      selectedColor: Colors.black,
-                      unselectedColor: Colors.black),
-
-                  /// Profile
-                  SalomonBottomBarItem(
-                    icon: Icon(Icons.person),
-                    title: Text("Profile"),
-                    selectedColor: Colors.black,
-                    unselectedColor: Colors.black,
-                  ),
-                ],
+                items: navItems,
               ),
             ),
           );

@@ -8,9 +8,17 @@ class Calendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Hello World!"),
+      backgroundColor: Color.fromARGB(255, 250, 245, 250),
+      body: Padding(
+        padding: const EdgeInsets.all(60.0),
+        child: Column(
+          children: [
+            Row(
+              children: [],
+            ),
+          ],
         ),
-        body: Center(child: Text("Hello WOrld")));
+      ),
+    );
   }
 }

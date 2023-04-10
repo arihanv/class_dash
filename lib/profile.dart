@@ -7,8 +7,11 @@ import 'package:flutter/material.dart';
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Hello World!"),
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Text("Hello WOrld!"),
+      ),
     );
   }
 }

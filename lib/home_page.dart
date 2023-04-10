@@ -23,20 +23,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 150, 202, 244),
-        body: Column(
-          children: [
-            Header(
-              name: userName,
-              date: today,
-            ),
-            const CurrentEvents(),
-          ],
-        ),
-        bottomNavigationBar: bottomNavigationBar,
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 150, 202, 244),
+      body: Column(
+        children: [
+          Header(
+            name: userName,
+            date: today,
+          ),
+          const CurrentEvents(),
+        ],
       ),
+      bottomNavigationBar: bottomNavigationBar,
     );
   }
 }
